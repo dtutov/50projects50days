@@ -2,4 +2,4 @@
 
 **_#100daysOfCode challenge_**
 
-### Init commit
+- Day 1 - Expanding Cards
