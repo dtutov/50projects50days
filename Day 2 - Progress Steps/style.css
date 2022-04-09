@@ -1,0 +1,103 @@
+@import url('https://fonts.googleapis.com/css2?family=Mulish:wght@300&display=swap');
+
+:root {
+	--bg-color: #f6f7fb;
+	--line-border-fill: #3498db;
+	--line-border-empty: #e0e0e0;
+}
+
+* {
+	box-sizing: border-box;
+}
+
+body {
+	display: flex;
+	width: 100vw;
+	height: 100vh;
+	margin: 0;
+	font-family: "Mulish", sans-serif;
+	background-color: var(--bg-color);
+	justify-content: center;
+	align-items: center;
+}
+
+.container {
+	text-align: center;
+}
+
+.progress-container {
+	position: relative;
+	display: flex;
+	width: 350px;
+	justify-content: space-between;
+	align-items: center;
+	margin-bottom: 35px;
+}
+
+.progress-container::before {
+	position: absolute;
+	left: 0;
+	z-index: -1;
+	width: 100%;
+	height: 4px;
+	background-color: var(--line-border-empty);
+	content: '';
+}
+
+.progress {
+	position: absolute;
+	left: 0;
+	z-index: -1;
+	width: 0;
+	height: 4px;
+	background-color: var(--line-border-fill);
+	transition: 0.4 ease;
+}
+
+.circle {
+	display: flex;
+	width: 30px;
+	height: 30px;
+	margin: 0;
+	font-size: 16px;
+	text-align: center;
+	color: #999;
+	background-color: #fff;
+	border: 3px solid var(--line-border-empty);
+	border-radius: 50%;
+	transition: 0.4 ease;
+	justify-content: center;
+	align-items: center;
+}
+
+.circle.active {
+	color: var(--line-border-fill);
+	border-color: var(--line-border-fill);
+}
+
+.btn {
+	margin: 5px;
+	padding: 8px 30px;
+	font-family: inherit;
+	font-size: 16px;
+	text-align: center;
+	color: #fff;
+	background-color: var(--line-border-fill);
+	border: none;
+	border-radius: 6px;
+	cursor: pointer;
+}
+
+.btn:active {
+	transform: scale(.95);
+}
+
+.btn:focus {
+	outline: 0;
+}
+
+.btn:disabled {
+	background-color: var(--line-border-empty);
+	transform: none;
+	cursor: not-allowed;
+}
