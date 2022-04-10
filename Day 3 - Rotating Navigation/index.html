@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<title>Rotating Navigation</title>
+
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+	<link rel="stylesheet" href="style.css">
+	<script src="script.js" defer></script>
+</head>
+<body>
+	<div class="container">
+		<div class="circle-container">
+			<div class="circle">
+				<button id="close">
+					<i class="fas fa-times"></i>
+				</button>
+				<button id="open">
+					<i class="fas fa-bars"></i>
+				</button>
+			</div>
+		</div>
+		<div class="content show-nav">
+			<h1 class="page-title">Joe Satriani 'The Elephants of Mars'</h1>
+			<small class="text-author">By Mike O'Cull</small>
+			<p class="page-text">Rock guitar mastermind Joe Satriani bounces back post-pandemic with a new record, The Elephants of Mars, that features
+			some of the most compelling songs of his career. The album will be released April 8th, 2022 on the earMUSIC imprint and
+			will be available in limited-edition colored vinyl, black vinyl, Digi-pack CD, and digital formats.</p>
+			<p class="page-text">The Elephants of Mars is Satriani's 19th studio effort to date and definitively reinforces why he has remained perhaps
+			the most popular instrumental rock/shred guitarist out there since the 1980s. His music has always been as much about
+			songwriting as it was high-velocity guitar slinging and Satch has continued to refine that internal balance with each
+			new release. He's so good at it now that he can hold back at will to create moods and emotions that mesmerize listeners
+			before clobbering them with his prodigious chops that are always just below the surface. He sees the big picture of his
+			music better than anyone in his genre and that, friends and neighbors, is why he rules.</p>
+			<div class="img-wrapper">
+				<img class="page-img" src="img/elephants.jpg" alt="Joe Satriani ‘The Elephants of Mars'">
+			</div>
+			<p class="page-text">
+				Joe Satriani has been at the top of the rock guitar game for over 30 years as a headline solo artist and as part of the
+				G3 tours with his former student and fellow shredder Steve Vai. He has sold over ten million records, seen four of his
+				titles earn gold record status, and two others make it to platinum. He's also been nominated for an incredible 15 Grammy
+				Awards. His exquisite ballad “Always With Me, Always With You,” achieved the impossible and brought instrumental rock
+				back to radio in 1987 for the first time since the heyday of bands like The Ventures in the 1960s. Joe also scored with
+				his side band Chickenfoot, which featured ex-Van Halen frontman Sammy Hagar, Van Halen bassist Michael Anthony, and Red
+				Hot Chili Peppers' drummer Chad Smith. Their debut album was certified gold and their second studio album debuted on the
+				charts at Number Nine.
+			</p>
+		</div>
+	</div>
+			<nav class="page-nav">
+				<ul class="page-nav__list">
+					<li class="page__nav__item">
+						<a class="page-nav__link" href="#">
+							<i class="page-nav__icon fas fa-home"></i>
+							<span>Home</span>
+						</a>
+					</li>
+					<li class="page__nav__item">
+						<a class="page-nav__link" href="#">
+							<i class="page-nav__icon fas fa-user-alt"></i>
+							<span>About</span>
+						</a>
+					</li>
+					<li class="page__nav__item">
+						<a class="page-nav__link" href="#">
+							<i class="page-nav__icon fas fa-envelope"></i>
+							<span>Contacts</span>
+						</a>
+					</li>
+				</ul>
+			</nav>
+</body>
+</html>
