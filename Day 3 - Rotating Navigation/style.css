@@ -13,18 +13,21 @@ body {
 }
 
 .container {
+	display: flex;
+	justify-content: center;
 	position: relative;
 	background-color: #fafafa;
 	min-height: 100vh;
 	width: 100vw;
 	margin: 0;
-	padding: 100px 50px 0 100px;
+	padding: 80px 50px 0 100px;
+	transform-origin: top left;
+	transition: transform 0.4s linear;
 }
 
 .container.show-nav {
 	transform: rotate(-15deg);
-	transform-origin: top left;
-	transition: transform 0.5s linear;
+
 }
 
 .container.show-nav .circle {
@@ -33,7 +36,7 @@ body {
 
 .container.show-nav + .page-nav li {
 	transform: translate(0%);
-	transition-delay: 0.3s;
+	transition-delay: 0.2s;
 }
 
 .circle-container {
@@ -48,7 +51,7 @@ body {
 	border-radius: 50%;
 	background-color: #f24a22;
 	position: relative;
-	transition: transform 0.5s linear;
+	transition: transform 0.4s linear;
 }
 
 .circle button {
@@ -77,6 +80,10 @@ body {
 
 .circle button#close i {
 	transform: rotate(15deg);
+}
+
+.content {
+	max-width: 1000px;
 }
 
 .page-title {
@@ -112,7 +119,7 @@ body {
 
 .page__nav__item {
 	transform: translate(-100%);
-	transition: transform 0.5s linear;
+	transition: transform 0.4s linear;
 }
 
 .page-nav__link {
