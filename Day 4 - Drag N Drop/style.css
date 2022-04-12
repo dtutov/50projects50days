@@ -27,7 +27,8 @@ body {
 .fill {
 	height: 100%;
 	width: 100%;
-	background-image: url('img/001.jpg');
+
+	background: url('img/grumpy.jpg') no-repeat;
 	background-size: cover;
 }
 
