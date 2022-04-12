@@ -1,0 +1,42 @@
+* {
+	box-sizing: border-box;
+}
+
+body {
+	margin: 0;
+	width: 100vw;
+	height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: steelblue;
+}
+
+.container {
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	grid-gap: 0.3em;
+}
+
+.empty-box {
+	width: 200px;
+	height: 200px;
+	border: 1px solid #333;
+}
+
+.fill {
+	height: 100%;
+	width: 100%;
+
+	background: url('img/grumpy.jpg') no-repeat;
+	background-size: cover;
+}
+
+.hold {
+	border: 5px solid #e9e9e9;
+}
+
+.hovered {
+	background-color: #444;
+	border: 5px dashed #000;
+}
