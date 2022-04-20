@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<title>Typing Game</title>
+
+	<link rel="stylesheet" href="style.css">
+	<script src="script.js" defer></script>
+</head>
+<body>
+	<main class="game-content">
+		<h2 class="game-title">👩‍💻 Speed Typer 👨‍💻</h2>
+		<div class="game-panel">
+			<div class="info-block timer">
+				<h3 class="info-block__header">Timer</h3>
+				<p class="info-block__count">60s</p>
+			</div>
+			<div class="info-block errors">
+				<h3 class="info-block__header">Errors</h3>
+				<p class="info-block__count">0</p>
+			</div>
+		</div>
+		<div class="quote">
+			<p class="quote__text">
+				You can avoid reality, but you cannot avoid the consequences of avoiding reality.
+			</p>
+		</div>
+		<div class="input-container">
+			<textarea class="input-area" placeholder="start typing here..."></textarea>
+		</div>
+		<div class="resaults hidden">
+			<div class="info-block errors">
+				<h3 class="info-block__header">Errors</h3>
+				<p class="info-block__count">0</p>
+			</div>
+			<div class="info-block accuracy">
+				<h3 class="info-block__header">Accuracy</h3>
+				<p class="info-block__count">100%</p>
+			</div>
+			<button class="game-button">Start game</button>
+		</div>
+	</main>
+</body>
+</html>
