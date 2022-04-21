@@ -11,3 +11,5 @@
 - Day 4 - [Drag N Drop](https://dtutov.github.io/50projects50days/Day%204%20-%20Drag%20N%20Drop/index.html)
 
 - Day 5 - [Exchange Rate Calculator](https://dtutov.github.io/50projects50days/Day%205%20-%20Exchange%20Rate%20Calculator/index.html)
+
+- Day 6 - [Typing Game](https://dtutov.github.io/50projects50days/Day%206%20-%20Typing%20Game/index.html)
