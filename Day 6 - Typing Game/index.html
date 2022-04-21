@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<title>Typing Game</title>
+
+	<link rel="stylesheet" href="style.css">
+	<script src="script.js" defer></script>
+</head>
+<body>
+	<h2 class="game-title">Speed Typer</h2>
+	<div class="game-container">
+		<div class="game-panel">
+			<div class="indicator timer">
+				<p class="indicator__header">Time:</p>
+				<p class="indicator__value" id="timer-value">60s</p>
+			</div>
+			<div class="indicator errors">
+				<p class="indicator__header">Errors:</p>
+				<p class="indicator__value" id="errors-value">0</p>
+			</div>
+			<div class="indicator accuracy">
+				<p class="indicator__header">Accuracy:</p>
+				<p class="indicator__value" id="accuracy-value">100%</p>
+			</div>
+		</div>
+		<div class="quote">
+			<p class="quote__text">
+				Click on the input field to start the game!
+			</p>
+		</div>
+		<div class="user-input">
+			<textarea class="user-input__area" id="input-area" placeholder="Type text here ..."></textarea>
+		</div>
+		<div class="results hidden">
+			<h3 class="results__title">Game over!</h3>
+			<div class="results-wrapper">
+				<div class="results__score">
+					<div class="indicator chars">
+						<p class="indicator__header">Characters:</p>
+						<p class="indicator__value" id="results-chars">0</p>
+					</div>
+				</div>
+				<div class="results__score">
+					<div class="indicator errors">
+						<p class="indicator__header">Errors:</p>
+						<p class="indicator__value" id="results-errors">0</p>
+					</div>
+				</div>
+				<div class="results__score">
+					<div class="indicator accuracy">
+						<p class="indicator__header">Accuracy:</p>
+						<p class="indicator__value" id="results-accuracy">100%</p>
+					</div>
+				</div>
+			</div>
+			<button class="game-button">Play again!</button>
+		</div>
+	</div>
+</body>
+</html>
