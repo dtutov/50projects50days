@@ -28,31 +28,9 @@
 
 		</header>
 		<main class="page-main">
-			<div class="cards-container">
-				<!-- <p>There are no memory cards here yet, create them.</p> -->
-				<div class="card active">
-					<div class="inner-card">
-						<div class="inner-card__front">
-							<p>What is JavaScript?</p>
-						</div>
-						<div class="inner-card__back">
-							<p>It's a programming language.</p>
-						</div>
-					</div>
-				</div>
-				<div class="card">
-					<div class="inner-card">
-						<div class="inner-card__front">
-							<p>Why so serious?</p>
-						</div>
-						<div class="inner-card__back">
-							<p>It's a programming language.</p>
-						</div>
-					</div>
-				</div>
-			</div>
+			<div class="cards-container"></div>
 			<nav class="cards-nav">
-				<button class="cards-nav__button cards-nav__prev">
+				<button class="cards-nav__button cards-nav__prev" id="prev-card">
 					<i>
 						<svg id="prev-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
 							<path
@@ -62,7 +40,7 @@
 					Prev
 				</button>
 				<p class="cards-nav__count">0</p>
-				<button class="cards-nav__button cards-nav__next">
+				<button class="cards-nav__button cards-nav__next" id="next-card">
 					<i>
 						<svg id="next-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
 							<path
@@ -90,7 +68,7 @@
 	<div class="add-container hidden">
 		<div class="add-container__wrapper">
 			<h2 class="add-container__title">Add new card</h2>
-			<button class="close-button">
+			<button class="close-button add-container__close">
 				<i>
 					<svg id="close-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">
 						<path

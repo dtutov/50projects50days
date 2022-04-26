@@ -15,15 +15,16 @@
 }
 
 body {
-	margin: 0;
-	width: 100vw;
-	height: 100vh;
+	position: relative;
 	display: flex;
+	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-	flex-direction: column;
+	width: 100vw;
+	height: 100vh;
+	margin: 0;
 	background-color: var(--bg-color);
-	position: relative;
+	overflow: hidden;
 }
 
 .hidden {
@@ -42,18 +43,18 @@ body {
 /* Buttons */
 
 .page-button {
+	position: relative;
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	padding: 10px 15px;
-	position: relative;
+	padding: 5px 15px;
 	font-size: 16px;
-	cursor: pointer;
-	border: 1px solid var(--border-color);
-	background-color: transparent;
 	color: var(--font-color);
+	background-color: transparent;
+	border: 1px solid var(--border-color);
 	border-radius: 4px;
 	transition: border .15s ease-in;
+	cursor: pointer;
 }
 
 .page-button:hover,
@@ -66,17 +67,17 @@ body {
 }
 
 .cards-nav__button {
-	border: none;
-	background-color: transparent;
-	font-size: 0;
 	padding: 10px 15px;
+	font-size: 0;
+	background-color: transparent;
+	border: none;
 	cursor: pointer;
 }
 
 .close-button {
 	font-size: 0;
-	border: 0;
 	background-color: transparent;
+	border: 0;
 }
 
 #button-icon {
@@ -97,12 +98,12 @@ body {
 /* Page grid */
 
 .page-container {
-	width: 70%;
-	height: 100%;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
+	width: 70%;
+	height: 100%;
 }
 
 .page-header {
@@ -112,56 +113,58 @@ body {
 }
 
 .page-header__title {
+	position: relative;
 	margin: 0;
 	font-size: 42px;
-	position: relative;
 }
 
 .page-header__button {
 	position: absolute;
-	right: -65%;
 	top: 10px;
+	right: -65%;
 	font-size: 12px;
 }
 
 .page-main {
-	width: 100%;
-	height: 40vh;
 	display: flex;
 	flex-direction: column;
-	align-items: center;
 	justify-content: center;
+	align-items: center;
+	width: 100%;
+	height: 40vh;
 }
 
 .cards-container {
-	perspective: 1000px;
-	height: 100%;
-	width: 100%;
+	position: relative;
 	display: flex;
 	flex-direction: column;
-	align-items: center;
 	justify-content: center;
-	position: relative;
+	align-items: center;
+	width: 700px;
+	height: 100%;
+  	max-width: 100%;
+	perspective: 1000px;
 }
 
 .card {
-	width: 90%;
-	max-width: 700px;
-	height: 90%;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	font-size: 26px;
 	position: absolute;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 700px;
+	height: 90%;
+	font-size: 26px;
 	opacity: 0;
-	transition: transform 0.4s ease, opacity 0.4 ease;
+	transition: transform 0.4s ease, opacity 0.4s ease;
+	max-width: 90%;
+	transform: translateX(50%) rotateY(-10deg);
+	
 }
 
 .card.active {
+	z-index: 10;
 	opacity: 1;
 	cursor: pointer;
-	z-index: 10;
-	box-shadow: 0px 5px 10px 2px rgba(0, 0, 0, 0.2);
 	transform: translateX(0) rotateY(0deg);
 }
 
@@ -169,20 +172,17 @@ body {
 	transform: translateX(-50%) rotateY(10deg);
 }
 
-.card.right {
-	transform: translateX(50%) rotateY(-10deg);
-}
-
 .card.show-answer .inner-card {
-	transform: rotateX(180deg);
+	transform: rotateY(180deg);
 }
 
 .inner-card {
 	position: relative;
 	width: 100%;
 	height: 100%;
+	transition: transform 0.5s ease;
+	box-shadow: 0px 5px 10px 2px rgba(0, 0, 0, 0.2);
 	transform-style: preserve-3d;
-	transition: transform 0.4s ease;
 }
 
 .inner-card__front,
@@ -200,25 +200,25 @@ body {
 }
 
 .inner-card__front {
-	transform: rotateX(0deg);
 	z-index: 2;
+	transform: rotateY(0deg);
 }
 
 .inner-card__back {
-	transform: rotateX(180deg);
+	transform: rotateY(180deg);
 }
 
 .cards-nav {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
 	width: 100px;
 	height: 50px;
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
 }
 
 .cards-nav__count {
-	font-size: 24px;
 	margin: 0;
+	font-size: 24px;
 }
 
 .page-footer {
@@ -228,22 +228,22 @@ body {
 
 .add-container {
 	position: absolute;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 	width: 100%;
 	height: 100%;
-	display: flex;
-	align-items: center;
-	justify-content: center;
 	background-color: var(--bg-color);
 }
 
 .add-container__wrapper {
-	width: 35%;
-	height: 35%;
+	position: relative;
 	display: flex;
 	flex-direction: column;
-	align-items: center;
 	justify-content: flex-start;
-	position: relative;
+	align-items: center;
+	width: 35%;
+	height: 450px;
 	background-color: var(--card-color);
 	box-shadow: 0px 5px 10px 2px rgba(0, 0, 0, 0.2);
 }
@@ -252,6 +252,7 @@ body {
 	position: absolute;
 	top: 10px;
 	right: 10px;
+	cursor: pointer;
 }
 
 .form-group {
@@ -261,16 +262,16 @@ body {
 }
 
 .form-group textarea {
+	padding: 10px;
 	min-width: 300px;
 	min-height: 70px;
-	padding: 10px;
 	resize: none;
 }
 
 .form-group label {
 	font-size: 18px;
-	margin-bottom: 20px;
 	font-weight: 600;
+	margin-bottom: 20px;
 }
 
 .add-container__button {
