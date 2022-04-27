@@ -9,9 +9,18 @@ const questionFormElement = document.getElementById('question');
 const answerFormElement = document.getElementById('answer');
 const addNewCardButton = document.querySelector('.add-container__button');
 const clearCardsButton = document.querySelector('.clear-cards');
+const addImageInput = document.getElementById('card-image');
+const addImageForm = document.querySelector('.add-image');
+const addImageTextArea = document.querySelector('.add-image-area');
+
+const cardsList = [];
+const cardBgColorsNumber = 4;
 
 let currentActiveCard = 0;
-const cardsList = [];
+let imageData = null;
+let randomBgColor = getRandomNumber(1, 4);
+
+const allowedExtension = ['image/jpeg', 'image/jpg', 'image/png'];
 
 const cardsData = getCardsData();
 
@@ -21,9 +30,13 @@ function createCards() {
 
 createCards();
 
+function getRandomNumber(min, max) {
+	return Math.floor(Math.random() * (max - min) + min);
+};
+
 function createCard(data, index) {
 
-	const {question, answer} = data;
+	const {question, answer, color, image} = data;
 
 	const card = document.createElement('div');
 	card.classList.add('card');
@@ -32,12 +45,20 @@ function createCard(data, index) {
 		card.classList.add('active');
 	}
 
+	const imageContent = image ? `
+		<div class="image-wrapper" style="border: 10px solid var(--card-color-${color})">
+			<img class="card-image" src="${image}" alt="${question}"></img>
+		</div>` : '';
+
 	card.innerHTML = `
-		<div class="inner-card">
+		<div class="inner-card" style="background-color: var(--card-color-${color})">
 			<div class="inner-card__front">
-				<p>${question}</p>
+				${imageContent}
+				<div class="inner-card__wrapper">
+					<p>${question}</p>
+				</div>
 			</div>
-			<div class="inner-card__back">
+			<div class="inner-card__back" style="background-color:var(--card-color-${color})">
 				<p>${answer}</p>
 			</div>
 		</div>
@@ -55,7 +76,7 @@ function updateCardsCounter() {
 };
 
 function getCardsData() {
-	const cards =JSON.parse(localStorage.getItem('cards'));
+	const cards = JSON.parse(localStorage.getItem('cards'));
 	return cards === null ? [] : cards;
 };
 
@@ -97,12 +118,18 @@ addNewFormCloseButton.addEventListener('click', () => {
 	addNewForm.classList.add('hidden');
 });
 
+
 addNewCardButton.addEventListener('click', () => {
 	const question = questionFormElement.value;
 	const answer = answerFormElement.value;
 
 	if (question.trim() && answer.trim()) {
-		const newCard = {question, answer};
+		const newCard = {
+			question,
+			answer,
+			color: randomBgColor,
+			image: imageData,
+		};
 		
 		createCard(newCard);
 		
@@ -113,6 +140,27 @@ addNewCardButton.addEventListener('click', () => {
 
 		cardsData.push(newCard);
 		setCardsData(cardsData);
+	}
+});
+
+addImageInput.addEventListener('change', function () {
+	let type = this.files[0].type;
+	if (allowedExtension.indexOf(type) > -1) {
+		addImageForm.classList.remove('error-image-type');
+		addImageForm.classList.add('correct-image-type');
+		addImageTextArea.innerText = 'Image attached!';
+
+		const reader = new FileReader();
+
+		reader.addEventListener('load', () => {
+			imageData = reader.result;
+		});
+
+		reader.readAsDataURL(this.files[0]);
+	} else {
+		addImageForm.classList.add('error-image-type');
+		addImageForm.classList.remove('correct-image-type');
+		addImageTextArea.innerText = 'Invalid image format!';
 	}
 });
 
