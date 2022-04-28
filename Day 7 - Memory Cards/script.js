@@ -25,7 +25,12 @@ const allowedExtension = ['image/jpeg', 'image/jpg', 'image/png'];
 const cardsData = getCardsData();
 
 function createCards() {
-	cardsData.forEach((card, index) => createCard(card, index));
+	if (cardsData.length === 0) {
+		cardsContainer.innerHTML = '<p style="font-size: 18px">There are no cards yet, to create click on the create button...</p>';
+	} else {
+		cardsContainer.innerHTML = '';
+		cardsData.forEach((card, index) => createCard(card, index));
+	}
 };
 
 createCards();
@@ -166,6 +171,5 @@ addImageInput.addEventListener('change', function () {
 
 clearCardsButton.addEventListener('click', () => {
 	localStorage.clear();
-	cardsContainer.innerHTML = '';
 	window.location.reload();
 });
