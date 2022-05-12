@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	
+	<title>Expense Tracker</title>
+
+	<link rel="stylesheet" href="style.css">
+	<script src="script.js" defer></script>
+</head>
+<body>
+	<div class="container">
+		<h1>Expense Tracker</h1>
+		<div class="balance">
+			<h2 class="balance__title">Your balance:</h2>
+			<span class="balance__amount">0.00 ₽</span>
+		</div>
+		<div class="balance-details">
+			<div class="balance-fild balance-fild--inc">
+				<h3 class="balance-fild__title">Income</h3>
+				<span class="balance-fild__amount" id="money-plus">+0.00 ₽</span>
+			</div>
+			<div class="balance-fild balance-fild--exp">
+				<h3 class="balance-fild__title">Expense</h4>
+				<span class="balance-fild__amount" id="money-minus">-0.00 ₽</span>
+			</div>
+		</div>
+		<div class="history">
+			<h3 class="block-title history__title">History</h3>
+			<ul id="history-list" class="history__list"></ul>
+		</div>
+		<div class="add-new-transaction">
+			<h3 class="block-title add-new-transaction__title">Add new transaction</h3>
+			<form id="transaction-form">
+				<div class="form-control">
+					<label for="transaction-text">Text</label>
+					<input type="text" id="transaction-text" placeholder="Enter text..." />
+				</div>
+				<div class="form-control">
+					<label for="transaction-amount">Amount <span>(negative - expense, positive - income)</span></label>
+					<input type="number" id="transaction-amount" placeholder="Enter amount..." />
+				</div>
+				<button class="form-control__btn">Add transaction</button>
+			</form>
+		</div>
+	</div>	
+</body>
+</html>
