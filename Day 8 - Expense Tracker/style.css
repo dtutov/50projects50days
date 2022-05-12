@@ -37,8 +37,8 @@ body {
 	flex-direction: column;
 	align-items: center;
 	width: 100%;
-	padding-top: 10%;
 	max-width: 400px;
+	padding-top: 10%;
 }
 
 .block-title {
@@ -67,6 +67,7 @@ body {
 	display: flex;
 	width: 100%;
 	margin-bottom: 20px;
+	box-shadow: var(--box-shadow);
 }
 
 .balance-details::before {
@@ -89,7 +90,6 @@ body {
 	width: 50%;
 	padding: 0 0 15px 0;
 	background-color: var(--text-color);
-	box-shadow: var(--box-shadow);
 }
 
 
@@ -178,7 +178,7 @@ body {
 .form-control {
 	display: flex;
 	flex-direction: column;
-	margin-bottom: 20px;
+	margin-bottom: 15px;
 }
 
 .form-control label {
@@ -201,6 +201,7 @@ body {
 .form-control__btn {
 	width: 100%;
 	padding: 10px;
+	margin-top: 20px;
 	font-size: 20px;
 	color: #fff;
 	background-color: var(--primary-color);
@@ -218,6 +219,49 @@ body {
 
 .form-control__btn:active {
 	transform: scale(98%);
+}
+
+.form-control input.bounce {
+  outline: 0;
+  border: 1px solid var(--expense-color);
+  animation-name: bounce;
+  animation-duration: .5s;
+  animation-delay: 0.25s;
+}
+
+@keyframes bounce {
+  0% {
+    transform: translateX(0px);
+    timing-function: ease-in;
+  }
+  37% {
+    transform: translateX(5px);
+    timing-function: ease-out;
+  }
+  55% {
+    transform: translateX(-5px);
+    timing-function: ease-in;
+  }
+  73% {
+    transform: translateX(4px);
+    timing-function: ease-out;
+  }
+  82% {
+    transform: translateX(-4px);
+    timing-function: ease-in;
+  }
+  91% {
+    transform: translateX(2px);
+    timing-function: ease-out;
+  }
+  96% {
+    transform: translateX(-2px);
+    timing-function: ease-in;
+  }
+  100% {
+    transform: translateX(0px);
+    timing-function: ease-in;
+  }
 }
 
 @media (max-width: 450px) {
