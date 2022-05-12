@@ -15,3 +15,5 @@
 - Day 6 - [Typing Game](https://dtutov.github.io/50projects50days/Day%206%20-%20Typing%20Game/index.html)
 
 - Day 7 - [Memory Cards](https://dtutov.github.io/50projects50days/Day%207%20-%20Memory%20Cards/index.html)
+
+- Day 8 - [Expense Tracker](https://dtutov.github.io/50projects50days/Day%208%20-%20Expense%20Tracker/index.html)
