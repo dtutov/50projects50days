@@ -3,9 +3,9 @@
 :root {
 	--text-color: #fff;
 	--ground-color: #26262f;
-	--acent-color: #4D7FE6;
+	--acent-color: #3e78ec;
 	--border-color: #dedede;
-	--main-color: #8adcc9;
+	--main-color: #34caa4;
 }
 
 .hidden {
@@ -48,13 +48,6 @@ body {
 	margin: 0;
 	font-size: 32px;
 	color: var(--text-color);
-}
-
-.timer {
-	font-size: 32px;
-	font-weight: 800;
-	color: var(--acent-color);
-	margin-bottom: 40px;
 }
 
 .page-button {
@@ -124,7 +117,7 @@ body {
 }
 
 .arrow.start {
-	animation: rotate 12s linear forwards infinite;
+	animation: rotate 10s linear forwards infinite;
 }
 
 @keyframes rotate {
